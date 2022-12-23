@@ -1,0 +1,92 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Худи черного цвета с монограммами adidas Originals",
+      "description": "Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.",
+      "price": "6090.00",
+      "quantity": 10,
+      "is_published": true,
+      "created_at": "2022-12-01T16:58:26.714Z",
+      "updated_at": "2022-12-01T17:02:30.329Z",
+      "image": "products_images/2022/12/01/Adidas-hoodie.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Синяя куртка The North Face",
+      "description": "Гладкая ткань. Водонепроницаемое покрытие. Легкий и теплый пуховый наполнитель.",
+      "price": "23725.00",
+      "quantity": 5,
+      "is_published": true,
+      "created_at": "2022-12-01T16:58:51.228Z",
+      "updated_at": "2022-12-01T17:02:26.289Z",
+      "image": "products_images/2022/12/01/Blue-jacket-The-North-Face.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Коричневый спортивный oversized-топ ASOS DESIGN",
+      "description": "Материал с плюшевой текстурой. Удобный и мягкий.",
+      "price": "3390.00",
+      "quantity": 10,
+      "is_published": true,
+      "created_at": "2022-12-01T16:59:32.323Z",
+      "updated_at": "2022-12-01T17:02:19.985Z",
+      "image": "products_images/2022/12/01/Brown-sports-oversized-top-ASOS-DESIGN.png",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Черный рюкзак Nike Heritage",
+      "description": "Плотная ткань. Легкий материал.",
+      "price": "2300.00",
+      "quantity": 15,
+      "is_published": true,
+      "created_at": "2022-12-01T17:00:05.447Z",
+      "updated_at": "2022-12-01T17:02:15.974Z",
+      "image": "products_images/2022/12/01/Black-Nike-Heritage-backpack.png",
+      "category": 4
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Черные туфли на платформе с 3 парами люверсов Dr Martens 1461 Bex",
+      "description": "Гладкий кожаный верх. Натуральный материал.",
+      "price": "13590.00",
+      "quantity": 5,
+      "is_published": true,
+      "created_at": "2022-12-01T17:00:53.432Z",
+      "updated_at": "2022-12-01T17:02:11.758Z",
+      "image": "products_images/2022/12/01/Black-Dr-Martens-shoes.png",
+      "category": 3
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Темно-синие широкие строгие брюки ASOS DESIGN",
+      "description": "Легкая эластичная ткань сирсакер Фактурная ткань.",
+      "price": "2890.00",
+      "quantity": 10,
+      "is_published": true,
+      "created_at": "2022-12-01T17:01:27.219Z",
+      "updated_at": "2022-12-01T17:02:06.350Z",
+      "image": "products_images/2022/12/01/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png",
+      "category": 2
+    }
+  }
+]

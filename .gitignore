@@ -1,0 +1,8 @@
+.idea
+db.sqlite3
+media
+.env
+users/__pycache__/
+store/__pycache__/
+products/__pycache__/
+common/__pycache__/
