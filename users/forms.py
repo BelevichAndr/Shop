@@ -23,7 +23,7 @@ class UserLoginForm(AuthenticationForm):
         fields = ("username", "password")
 
     def confirm_login_allowed(self, user):
-        if not user.is_verified_email:
+        if not user.is_verified_email and not user.is_superuser:
             message = "Email не верефицирован!"
             raise ValidationError(
                 message=message,
