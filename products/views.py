@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponseRedirect
+from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.base import TemplateView
 
@@ -41,7 +42,8 @@ def add_basket(request, product_id):
         basket.quantity += 1
         basket.save()
 
-    return HttpResponseRedirect(request.META["HTTP_REFERER"])
+    # return HttpResponseRedirect(request.META["HTTP_REFERER"])
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', reverse("products:index")))
 
 
 @login_required
