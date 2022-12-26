@@ -1,7 +1,10 @@
 from django.contrib import admin
+from django.contrib.auth import get_user_model
 
 from products.admin import BasketAdmin
-from users.models import EmailVerification, User
+from users.models import EmailVerification
+
+User = get_user_model()
 
 
 @admin.register(User)

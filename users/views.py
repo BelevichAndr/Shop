@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView, LogoutView
 from django.shortcuts import HttpResponseRedirect, render
@@ -8,7 +9,9 @@ from django.views.generic import CreateView, TemplateView
 from common.mixins import TitleMixin
 from products.models import Basket
 from users.forms import UserLoginForm, UserProfileForm, UserRegistrationForm
-from users.models import EmailVerification, User
+from users.models import EmailVerification
+
+User = get_user_model()
 
 
 class UserLoginView(TitleMixin, LoginView):
