@@ -41,10 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.github',
+    'social_django',
 
     "products",
     "users",
@@ -74,6 +71,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -156,15 +156,12 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'users.backends.EmailAuthBackend',
 
-    'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.github.GithubOAuth2',
 ]
 
-SITE_ID = 1
+SITE_ID = 1  # TODO
 
-SOCIALACCOUNT_PROVIDERS = {
-    'github': {
-        'SCOPE': [
-            'user',
-        ],
-    }
-}
+SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+SOCIAL_AUTH_GITHUB_KEY = 'fba76d97df71c1de88eb'
+SOCIAL_AUTH_GITHUB_SECRET = 'a3426eff86e48fa28003d941b3c99eb84222a4cd'
