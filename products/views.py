@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.core.cache import cache
 from django.shortcuts import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import ListView
@@ -19,15 +20,24 @@ class ProductListView(TitleMixin, ListView):
     context_object_name = "products"
     paginate_by = 3
     title = "Store - Каталог"
-    extra_context = {
-        "categories": ProductCategory.objects.all(),
-    }
 
     def get_queryset(self):
         category_id = self.kwargs.get("category_id")
         queryset = Product.published.filter(category_id=category_id) if category_id else Product.published.all()
 
         return queryset
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data()
+        categories = cache.get("categories")
+        if not categories:
+            context["categories"] = ProductCategory.objects.all()
+            cache.set("categories", context["categories"], 30)
+        else:
+            context["categories"] = categories
+
+        return context
+
 
 
 @login_required

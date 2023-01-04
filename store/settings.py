@@ -90,6 +90,16 @@ INTERNAL_IPS = [
     'localhost',
 ]
 
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -156,8 +166,14 @@ LOGIN_REDIRECT_URL = reverse_lazy('products:index')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
 
 # sending emails
+EMAIL_HOST = "smtp.mail.ru"
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "belevich00@mail.ru"
+EMAIL_HOST_PASSWORD = "1798rxW7wXS9NzmQgajZ"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # OAuth
 
@@ -174,3 +190,11 @@ SOCIAL_AUTH_JSONFIELD_ENABLED = True
 
 SOCIAL_AUTH_GITHUB_KEY = 'fba76d97df71c1de88eb'
 SOCIAL_AUTH_GITHUB_SECRET = 'a3426eff86e48fa28003d941b3c99eb84222a4cd'
+
+# Celery
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
+
+
+
