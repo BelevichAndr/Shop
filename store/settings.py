@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
 
     'products',
+    'orders',
     'users',
 
 ]
@@ -197,4 +198,8 @@ CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
 CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
 
 
+# Stripe
 
+STRIPE_PIBLIC_KEY = 'pk_test_51MP6nSGrKzCsa3U7xGW3shZlmeHOH1nazttlAN8dT69YVKYIGVpAoixSfnQLY5uyTj6wmdA8vNjtGYveeb4B7OdD00mvhUpV6a'
+STRIPE_SECRET_KEY = 'sk_test_51MP6nSGrKzCsa3U7MlSCAjqLY0TRzTZiL74OQpXQgfuwTJsAVVS1cbvDHjz2qYMe0xzRzFSRM4aMFFO7Oxcasve200UcdwTVhJ'
+STRIPE_WEBHOOK_KEY = 'whsec_2f4ddc5a1515a2aab4e83a6b65f8803c0e7c7d953defec23f5197691a0416b1d'
