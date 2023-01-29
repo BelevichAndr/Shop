@@ -74,6 +74,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'social_django',
+    'django_extensions',
 
     'debug_toolbar',
 
